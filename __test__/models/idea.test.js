@@ -30,6 +30,15 @@ describe('addIdea', () => {
 });
 
 describe('getAllIdeas', () => {
+  beforeAll(async () => {
+    await models.Idea.truncate();
+  });
+  afterEach(async () => {
+    await models.Idea.truncate();
+  });
+  it('should blah', async () => {
+    console.log(`aaaaaaaahhhhh ${await models.Idea.findAll()}`);
+  });
   it('should return all data', async () => {
     const idea1 = {
       title: 'Test Idea 1',
